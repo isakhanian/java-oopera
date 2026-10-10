@@ -1,7 +1,7 @@
 public class Person {
-    private String name;
-    private String surname;
-    private Gender gender;
+    protected String name;
+    protected String surname;
+    protected Gender gender;
 
     public Person(String name, String surname, Gender gender) {
         this.name = name;
@@ -21,9 +21,4 @@ public class Person {
         return gender;
     }
 
-}
-
-enum Gender {
-    MALE,
-    FEMALE
 }

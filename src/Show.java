@@ -35,16 +35,22 @@ public class Show {
     }
 
     public void changeActor(Actor newActor, String currentActorSurname) {
-        boolean actorFound = false;
-        for (int i = 0; i < listOfActors.size(); i++) {
-            Actor actor = listOfActors.get(i);
-            if (actor.getSurname().equals(currentActorSurname)) {
-                actorFound = true;
-                listOfActors.set(i, newActor);
-            }
-        }
-        if (!actorFound) {
-            System.out.println("Такого актера нет в списке");
+    int matchesCount = 0;
+    int actorIndex = -1;
+    for (int i = 0; i < listOfActors.size(); i++) {
+        Actor actor = listOfActors.get(i);
+
+        if (actor.getSurname().equals(currentActorSurname)) {
+            matchesCount++;
+            actorIndex = i;
         }
     }
+    if (matchesCount == 0) {
+        System.out.println("Такого актера нет в списке");
+    } else if (matchesCount > 1) {
+        System.out.println("Найдено несколько актеров с такой фамилией. Замена невозможна.");
+    } else {
+        listOfActors.set(actorIndex, newActor);
+    }
+}
 }
