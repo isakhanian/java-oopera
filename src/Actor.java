@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Actor extends Person{
+public class Actor extends Person {
     private int height;
 
     public Actor(String name, String surname, Gender gender, int height) {
@@ -14,7 +14,7 @@ public class Actor extends Person{
 
     @Override
     public String toString() {
-        return getName() + " " + getSurname() + " (" + height + ")";
+        return name + " " + surname + " (" + height + ")";
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Actor extends Person{
 
     @Override 
     public int hashCode() {
-        return Objects.hash(getName(), getSurname(), height);
+        return Objects.hash(name, surname, height);
     }
 
 }

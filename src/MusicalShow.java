@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class MusicalShow extends Show {
-    String musicAuthor;
-    String librettoText;
+    private String musicAuthor;
+    private String librettoText;
 
     public MusicalShow(String musicAuthor, String librettoText, String title, int duration, Director director, ArrayList<Actor> listOfActors) {
         super(title, duration, director, listOfActors);
@@ -13,6 +13,8 @@ public class MusicalShow extends Show {
     public void printLibrettoText() {
         System.out.println(librettoText);
     }
-
+    public String getMusicAuthor() {
+        return musicAuthor;
+}
 
 }   
